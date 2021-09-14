@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gresendi/note-taker.git"
+    "url": "git+https://github.com/alexisvfilmstuff/notetaker-application.git"
   },
   "bugs": {
-    "url": "https://github.com/gresendi/note-taker/issues"
+    "url": "https://github.com/alexisvfilmstuff/notetaker-application/issues"
   },
-  "homepage": "https://github.com/gresendi/note-taker#readme"
+  "homepage": "https://github.com/alexisvfilmstuff/notetaker-application#readme"
 }
