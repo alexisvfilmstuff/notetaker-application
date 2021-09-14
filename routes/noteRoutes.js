@@ -1,5 +1,6 @@
 const router = require('express').Router()
 let { notes } = require('../db')
+const path = require('path');
 let id = 0
 
 router.get('api/notes', (req, res) => {
@@ -28,13 +29,15 @@ router.delete('api/notes/:id', (req, res) => {
   // notes = notes.filter(note => note.id!=id)
 })
 
-router.get('notes'), (req, res) => {
-  res.sendFile(path.join(__dirname, 'notes.html'))
+router.get('notes', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/notes.html'))
 })
 
-router.get('*'), (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
+router.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 })
+
+
 
 module.exports = router
 
