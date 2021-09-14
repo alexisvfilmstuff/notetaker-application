@@ -9,4 +9,18 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
+app.get('/notes', req, res) => {
+  res.sendFile('/public/notes.html', {root:__dirname})
+  console.log('test')
+})
+
+app.get('/api/notes', req, res) => {
+  console.log('hi')
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, 'public / index.html'))
+})
+
 app.listen(process.env.PORT || 3000)
+console.log(‘listening on port 3000’)
