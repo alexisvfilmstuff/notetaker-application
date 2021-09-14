@@ -28,7 +28,7 @@ router.delete('api/notes/:id', (req, res) => {
   // notes = notes.filter(note => note.id!=id)
 })
 
-router.get('/notes'), (req, res) => {
+router.get('notes'), (req, res) => {
   res.sendFile(path.join(__dirname, 'notes.html'))
 })
 
