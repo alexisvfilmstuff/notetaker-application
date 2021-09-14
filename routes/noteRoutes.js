@@ -2,16 +2,12 @@ const router = require('express').Router()
 let { notes } = require('../db')
 let id = 0
 
-router.get('/notes', (req, res) => {
+router.get('api/notes', (req, res) => {
 
   res.json(notes)
 })
 
-router.get('*'), (req, res) => {
-  res.json(notes)
-}
-
-router.post('/notes', (req, res) => {
+router.post('api/notes', (req, res) => {
   let newNote = {
     title: req.body.title,
     text: req.body.text,
@@ -23,7 +19,7 @@ router.post('/notes', (req, res) => {
 
 })
 
-router.delete('/notes/:id', (req, res) => {
+router.delete('api/notes/:id', (req, res) => {
   const id = parseInt(req.params.id)
   console.log(id)
   console.log(notes[id])
@@ -32,4 +28,14 @@ router.delete('/notes/:id', (req, res) => {
   // notes = notes.filter(note => note.id!=id)
 })
 
+router.get('/notes'), (req, res) => {
+  res.sendFile(path.join(__dirname, ‘index.html’))
+})
+
+router.get('*'), (req, res) => {
+  res.sendFile(path.join(__dirname, ‘index.html’))
+})
+
 module.exports = router
+
+ 
